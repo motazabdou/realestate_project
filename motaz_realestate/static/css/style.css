@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,800&family=Poppins:wght@100;200&family=Quicksand:wght@300;500;600;700&display=swap');
+
 .btn-secondary {
   color: #fff !important; }
 
@@ -10,10 +12,15 @@ img {
 .navbar {
   opacity: 1;
   background-color: black;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  font-family: poppins; }
 
 .social a {
   margin-right: 0.4rem; }
+
+.active {
+  font-weight: bold !important;
+}
 
 #showcase {
   background: url("../img/showcase.jpg");
@@ -24,13 +31,24 @@ img {
   position: relative;
   min-height: 650px;
   color: #fff;
-  padding-top: 6rem; }
+  padding-top: 6rem;
+ }
+
+  #showcase::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6); }
 
   #showcase .home-search {
     min-height: 400px;
     position: relative;
     border-radius: 5px; }
-  #showcase .overlay {
+  
+    #showcase .overlay {
     content: '';
     position: absolute;
     top: 0;
