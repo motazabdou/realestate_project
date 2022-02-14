@@ -81,10 +81,11 @@ WSGI_APPLICATION = 'motaz_realestate.wsgi.application'
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'motaz_realestatedb',
-#         'USER': 'postgres',
-#         'PASSWORD': 'Hello2005!',
-#         'HOST': 'localhost'
+#         'NAME': 'jguoirov',
+#         'USER': 'jguoirov',
+#         'PASSWORD': 'J4Tll5IS_qb34ZC6UlOqG3m2upkKalZk',
+#         'HOST': 'tyke.db.elephantsql.com',
+#         'PORT': '5432'
 #     }
 # }
 
