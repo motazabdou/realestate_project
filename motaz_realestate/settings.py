@@ -54,7 +54,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-motazabdou-realestatepro-56f58ylgnjx.ws-eu31.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://8000-motazabdou-realestatepro-56f58ylgnjx.ws-eu32.gitpod.io']
 
 ROOT_URLCONF = 'motaz_realestate.urls'
 
