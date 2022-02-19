@@ -45,16 +45,16 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-motazabdou-realestatepro-56f58ylgnjx.ws-eu32.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://8000-motazabdou-realestatepro-56f58ylgnjx.ws-eu33.gitpod.io']
 
 ROOT_URLCONF = 'motaz_realestate.urls'
 
