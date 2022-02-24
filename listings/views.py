@@ -53,6 +53,24 @@ def search(request):
         county = request.GET['county']
         if county:
             queryset_list = queryset_list.filter(county__iexact=county)
+    
+    # search by number of bedrooms
+    if 'bedrooms' in request.GET:
+        bedrooms = request.GET['bedrooms']
+        if bedrooms:
+            queryset_list = queryset_list.filter(bedrooms__lte=bedrooms)
+    
+    # search by price (up to selected range)
+    if 'price' in request.GET:
+        price = request.GET['price']
+        if price:
+            queryset_list = queryset_list.filter(price__lte=price)
+    
+    # search by lease type (buy or rent)
+    if 'lease_type' in request.GET:
+        lease_type = request.GET['lease_type']
+        if lease_type:
+            queryset_list = queryset_list.filter(lease_type__iexact=lease_type)
 
     paginator = Paginator(queryset_list, 6)
     page = request.GET.get('page')

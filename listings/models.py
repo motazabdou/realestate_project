@@ -2,6 +2,11 @@ from django.db import models
 from datetime import datetime
 from realtors.models import Realtor
 
+lease_choices = (
+    ('Rent', 'Rent'),
+    ('Buy', 'Buy')
+)
+
 class Listing(models.Model):
     """ Class for individual listing """
     realtor = models.ForeignKey(Realtor, on_delete=models.DO_NOTHING)
@@ -25,6 +30,7 @@ class Listing(models.Model):
     photo_5 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
     photo_6 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
     is_published = models.BooleanField(default=True)
+    lease_type = models.CharField(max_length=10, choices=lease_choices, default='Buy')
     list_date = models.DateTimeField(default=datetime.now, blank=True)
 
     def __str__(self):
