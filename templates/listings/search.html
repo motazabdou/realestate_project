@@ -6,6 +6,9 @@
     <div class="container">
       <div class="row text-center">
         <div class="col-md-12">
+          <h1 class="display-4 mb-4">
+            Search Property
+          </h1>
           <form action="search.html">
             <!-- Form Row 1 -->
             <div class="form-row">
@@ -21,34 +24,11 @@
 
               <div class="col-md-4 mb-3">
                 <label class="sr-only">State</label>
-                <select name="state" class="form-control">
+                <select name="county" class="form-control">
                   <option selected="true" disabled="disabled">County (All)</option>
-                  <option value="C">Cork</option>
-                    <option value="CE">Clare</option>
-                    <option value="CN">Cavan</option>
-                    <option value="CW">Carlow</option>
-                    <option value="D">Dublin</option>
-                    <option value="DL">Donegal</option>
-                    <option value="G">Galway</option>
-                    <option value="KE">Kildare</option>
-                    <option value="KK">Kilkenny</option>
-                    <option value="KY">Kerry</option>
-                    <option value="L">Limerick</option>
-                    <option value="LD">Longford</option>
-                    <option value="LH">Louth</option>
-                    <option value="LM">Leirtim</option>
-                    <option value="LS">Laoise</option>
-                    <option value="MH">Meath</option>
-                    <option value="MN">Monaghan</option>
-                    <option value="MO">Mayo</option>
-                    <option value="OY">Offaly</option>
-                    <option value="RN">Roscommon</option>
-                    <option value="SO">Sligo</option>
-                    <option value="T">Tipperary</option>
-                    <option value="W">Waterford</option>
-                    <option value="WH">Westmeath</option>
-                    <option value="WX">Wexford</option>
-                    <option value="WW">Wicklow</option>
+                  {% for key, value in county_choices.items %}
+                    <option value="{{ key }}">{{ value }}</option>
+                  {% endfor %}
                 </select>
               </div>
             </div>
@@ -58,31 +38,17 @@
                 <label class="sr-only">Bedrooms</label>
                 <select name="bedrooms" class="form-control">
                   <option selected="true" disabled="disabled">Bedrooms (Any)</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                  <option>6</option>
-                  <option>7</option>
-                  <option>8</option>
-                  <option>9</option>
-                  <option>10</option>
+                  {% for key, value in bedroom_choices.items %}
+                    <option value="{{ key }}">{{ value }}</option>
+                  {% endfor %}
                 </select>
               </div>
               <div class="col-md-4 mb-3">
                 <select name="price" class="form-control">
                   <option selected="true" disabled="disabled">Max Price (All)</option>
-                  <option value="100000">$100,000</option>
-                  <option value="200000">$200,000</option>
-                  <option value="300000">$300,000</option>
-                  <option value="400000">$400,000</option>
-                  <option value="500000">$500,000</option>
-                  <option value="600000">$600,000</option>
-                  <option value="700000">$700,000</option>
-                  <option value="800000">$800,000</option>
-                  <option value="900000">$900,000</option>
-                  <option value="1000000">$1M+</option>
+                  {% for key, value in price_choices.items %}
+                    <option value="{{ key }}">{{ value }}</option>
+                  {% endfor %}
                 </select>
               </div>
               <div class="col-md-4 mb-3">
