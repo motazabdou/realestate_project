@@ -25,16 +25,16 @@
                 </div>
 
                 <div class="col-md-4 mb-3">
-                  <label class="sr-only">City</label>
-                  <input type="text" name="city" class="form-control" placeholder="City">
+                  <label class="sr-only">Eircode</label>
+                  <input type="text" name="eircode" class="form-control" placeholder="Eircode">
                 </div>
 
                 <div class="col-md-4 mb-3">
                   <label class="sr-only">County</label>
                   <select name="county" class="form-control">
                     <option selected="true" disabled="disabled">County (All)</option>
-                    {% for key,value in county_choices.items %}
-                      <option value="{{ key }}">{{ value }}</option>
+                    {% for county in county_choices %}
+                      <option value="{{ county }}">{{ county }}</option>
                     {% endfor %}
                     </select>
                 </div>
@@ -94,7 +94,7 @@
                   <div class="listing-heading text-center">
                     <h5 class="text-primary">{{ listing.title }}</h5>
                     <p>
-                      <i class="fas fa-map-marker text-secondary"></i> {{ listing.city }}</p>
+                      <i class="fas fa-map-marker text-secondary"></i> {{ listing.county }}</p>
                   </div>
                   <hr>
                   <div class="row py-2 text-secondary">
