@@ -79,6 +79,7 @@ def search(request):
         'bedroom_choices': bedroom_choices,
         'price_choices': price_choices,
         'county_choices': county_choices,
-        'listings': paged_listings
+        'listings': paged_listings,
+        'values': request.GET
     }
     return render(request, 'listings/search.html', context)

@@ -14,20 +14,24 @@
             <div class="form-row">
               <div class="col-md-4 mb-3">
                 <label class="sr-only">Keywords</label>
-                <input type="text" name="keywords" class="form-control" placeholder="Keyword (Pool, Garage, etc)">
+                <input type="text" name="keywords" class="form-control" value="{{ values.keywords }}" placeholder="Keyword (Pool, Garage, etc)">
               </div>
 
               <div class="col-md-4 mb-3">
                 <label class="sr-only">Eircode</label>
-                <input type="text" name="eircode" class="form-control" placeholder="Eircode">
+                <input type="text" name="eircode" class="form-control" value="{{ values.eircode }}" placeholder="Eircode">
               </div>
 
               <div class="col-md-4 mb-3">
                 <label class="sr-only">County</label>
                 <select name="county" class="form-control">
                   <option selected="true" disabled="disabled">County (All)</option>
-                  {% for county in county_choices %}
-                    <option value="{{ county }}">{{ county }}</option>
+                  {% for key, value in county_choices.items %}
+                  <option value="{{ key }}"
+                  {% if key == values.county %}
+                    selected
+                  {% endif %}
+                  >{{ value }}</option>
                   {% endfor %}
                 </select>
               </div>
@@ -39,7 +43,7 @@
                 <select name="bedrooms" class="form-control">
                   <option selected="true" disabled="disabled">Bedrooms (Any)</option>
                   {% for key, value in bedroom_choices.items %}
-                    <option value="{{ key }}">{{ value }}</option>
+                    <option value="{{ key }}" {% if key == values.bedrooms %} selected {% endif %}>{{ value }}</option>
                   {% endfor %}
                 </select>
               </div>
@@ -47,14 +51,15 @@
                 <select name="price" class="form-control">
                   <option selected="true" disabled="disabled">Max Price (All)</option>
                   {% for key, value in price_choices.items %}
-                    <option value="{{ key }}">{{ value }}</option>
+                    <option value="{{ key }}" {% if key == values.price %} selected {% endif %}>{{ value }}</option>
                   {% endfor %}
                 </select>
               </div>
               <div class="col-md-4 mb-3">
                 <label class="sr-only">For Rent / For Sale</label>
                 <select name="lease_type" class="form-control">
-                  <option selected="true" value="buy">To Buy</option>
+                  <option selected="true" disabled="disabled">Buy or Rent</option>
+                  <option value="buy">To Buy</option>
                   <option value="rent">To Rent</option>
                 </select>
             </div>
