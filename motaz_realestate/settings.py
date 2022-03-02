@@ -11,8 +11,9 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 import os
-import dj_database_url
 from pathlib import Path
+import dj_database_url
+from django.contrib.messages import constants as messages
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -56,7 +57,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-motazabdou-realestatepro-56f58ylgnjx.ws-eu33.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://8000-motazabdou-realestatepro-56f58ylgnjx.ws-eu33.gitpod.io', 
+                        'https://8000-motazabdou-realestatepro-56f58ylgnjx.ws-eu34xl.gitpod.io']
 
 ROOT_URLCONF = 'motaz_realestate.urls'
 
@@ -156,3 +158,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Media folder settings
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+# Messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger'
+}
