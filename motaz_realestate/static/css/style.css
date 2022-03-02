@@ -77,7 +77,8 @@ img {
   background: url(../img/building.jpg);
   background-repeat: no-repeat;
   background-position: top center;
-  background-attachment: fixed/cover;
+  background-attachment: fixed;
+  background-size: cover;
   min-height: 300px;
   position: relative;
   overflow: hidden; }
