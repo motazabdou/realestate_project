@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-s=!^wel#-@4jv1r54g#s$jad&*wv%k$rv_&(b-&^#o@5sb*7n6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['motaz-realestate.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['netlify.com', 'localhost']
 
 
 # Application definition
